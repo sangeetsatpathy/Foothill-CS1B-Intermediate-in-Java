@@ -1,0 +1,36 @@
+public class AssignmentSix {
+    public static void insertionSort(char[] arr)
+    {
+        /* This method will sort the array using the process of Insertion Sort.
+        Write support methods if needed to get this done. */
+        for (int i = 1; i<arr.length; i++)
+        {
+            char current = arr[i]; //current element each iteration, starting at one
+            int k = i-1; //the element before the current iteration
+            while(k>=0 && arr[k]>current) //each iteration, this code will iterate backwards through the elements
+                //and see if any of the elements need to be after the current element.
+            {
+                arr[k+1] = arr[k];
+                k--;
+            }
+            arr[k+1] = current; //Since we decrement k every time, we go back to the last element to be pushed up one
+            //index and place the current element there.
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        char[] input = {'b', 'g', 'h', 'e', 'a', 'z', 'f',  't', 'j', 'i'};
+        System.out.println(input);
+        AssignmentSix.insertionSort(input);
+        System.out.println(input);
+    }
+}
+
+/* Output:
+"C:\Program Files\Java\jdk-12.0.2\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\lib\idea_rt.jar=51945:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\sange\IdeaProjects\cs1b_assignments\out\production\cs1b_assignments AssignmentSix
+bgheazftji
+abefghijtz
+
+Process finished with exit code 0
+*/

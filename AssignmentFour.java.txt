@@ -1,0 +1,43 @@
+public class AssignmentFour {
+    public static void main(String[] args)
+    {
+        char[] input = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
+        System.out.println("Input: ");
+        for(char c:input)
+        {
+            System.out.print(c+ ", ");
+        }
+        System.out.println();
+        AssignmentFour.reverse(input);
+        System.out.println("Output: ");
+        for(char c:input)
+        {
+            System.out.print(c+ ", ");
+        }
+    }
+
+    public static void reverse(char[] arrToReverse)
+    {
+        char[] arr = arrToReverse;
+        int small = 0;
+        int end = arr.length-1;
+        while(small<(arr.length-1)/2)
+        {
+            char[] tempArray = new char[arrToReverse.length];
+            tempArray[small] = arrToReverse[small];
+            arrToReverse[small] = arrToReverse[end];
+            arrToReverse[end] = tempArray[small];
+            small++;
+            end--;
+        }
+    }
+}
+
+/* Output:
+"C:\Program Files\Java\jdk-12.0.2\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\lib\idea_rt.jar=53922:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\sange\IdeaProjects\cs1b_assignments\out\production\cs1b_assignments AssignmentFour
+Input:
+a, b, c, d, e, f, g, h, i, j,
+Output:
+j, i, h, g, e, f, d, c, b, a,
+Process finished with exit code 0
+*/

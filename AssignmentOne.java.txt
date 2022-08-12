@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class AssignmentOne {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter a character.");
+        char ch = sc.next().charAt(0);
+        if (ch >= 'A' && ch <= 'Z')
+            System.out.println(ch + " is an uppercase letter");
+        else if (ch >= 'a' && ch <= 'z')
+            System.out.println(ch + " is a lowercase letter");
+        else if (ch >= '0' && ch <= '9')
+            System.out.println(ch + " is a numeric character");
+    }
+}
+
+/* Output:
+"C:\Program Files\Java\jdk-12.0.2\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\lib\idea_rt.jar=49896:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\sange\IdeaProjects\cs1b_assignments\out\production\cs1b_assignments AssignmentOne
+Please enter a character.
+d
+d is a lowercase letter
+
+Process finished with exit code 0
+
+*/

@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+
+public class AssignmentNine {
+    public static void main(String[] args)
+    {
+        ArrayList<String> arr = new ArrayList<>();
+        arr.add("ABC");
+        arr.add("DE");
+        arr.add("FGHI");
+        arr.add("JKLMNOP");
+
+        System.out.println(arr);// Printing elements
+        // Remove element at index 3
+        arr.remove(3); // removes -  ArrayList : remove(index #)
+
+        System.out.println(arr); // Displaying ArrayList after deletion
+
+        System.out.println("Size of the array: " + arr.size());
+        System.out.println();
+        System.out.println("Does the array contain 'RST'? :" + arr.contains("RST"));
+        System.out.println("Does the array contain 'ABC'? :" + arr.contains("ABC"));
+
+        arr.add(0, "XYZ"); // Adds 10 at first index and pushes everything to the right
+        System.out.println("'XYZ' has now been added to the first index.");
+
+        System.out.println("DE located at index: "+ arr.indexOf("DE"));
+        System.out.println("Is the list empty? : " + arr.isEmpty());
+    }
+}

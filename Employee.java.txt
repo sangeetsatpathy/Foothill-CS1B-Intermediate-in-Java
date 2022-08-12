@@ -1,0 +1,122 @@
+public class Employee {
+    private int salary;
+    private String name;
+    private boolean hasFamily;
+    private String position;
+    private String[] subordinates;
+
+    public Employee()
+    {
+        this.salary = 50000;
+        this.name = "Unnamed";
+        this.hasFamily = true;
+        this.position = "Intern";
+    }
+
+    public Employee(int salary, String employeeName, boolean hasFamily, String positionHeld, String[] subordinates)
+    {
+        this.salary = salary;
+        this.name = employeeName;
+        this.hasFamily = hasFamily;
+        this.position = positionHeld;
+        this.subordinates = subordinates;
+    }
+
+    public Employee(int salary, String employeeName, String positionHeld)
+    {
+        this.salary = salary;
+        this.name = employeeName;
+        this.position = positionHeld;
+    }
+
+    public void assignSubordinates(String[] subordinateNames)
+    {
+        for(int i = 0; i<subordinateNames.length; i++)
+        {
+            subordinates[i] = subordinateNames[i];
+        }
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public void raiseSalary(int raiseAmount)
+    {
+        this.salary += raiseAmount;
+    }
+
+    public void hasFamily(boolean hasAFamily)
+    {
+        this.hasFamily = hasAFamily;
+    }
+
+    public void printSummary()
+    {
+        System.out.println("Name: " + this.name);
+        System.out.println("Salary: $" + this.salary);
+        System.out.println("Position: " + this.position);
+        System.out.println("Does this employee have a family? " + this.hasFamily);
+        printSubordinates();
+    }
+
+    public void printSubordinates()
+    {
+        System.out.println("Subordinates: ");
+        String[] employeeSubordinates = this.subordinates;
+        if(employeeSubordinates == null)
+        {
+            System.out.print("No subordinates.");
+        }else{
+            for(String i:employeeSubordinates)
+            {
+                System.out.print(i);
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        Employee employee1 = new Employee();
+        Employee employee2 = new Employee(90000, "Sangeet Satpathy", "Software Developer");
+        String[] subordinates = {"Subordinate A", "Subordinate B", "Subordinate C"};
+        Employee employee3 = new Employee(90000, "Sangeet Satpathy",
+                true, "Software Developer",subordinates);
+        System.out.println("Employee constructor with no arguments: ");
+        employee1.printSummary();
+        System.out.println("Employee constructor with only the salary, name, and position: ");
+        employee2.printSummary();
+        System.out.println("Employee constructor with all the data: ");
+        employee3.printSummary();
+    }
+}
+
+/* Output:
+"C:\Program Files\Java\jdk-12.0.2\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\lib\idea_rt.jar=60604:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\sange\IdeaProjects\cs1b_assignments\out\production\cs1b_assignments Employee
+Employee constructor with no arguments:
+Name: Unnamed
+Salary: $50000
+Position: Intern
+Does this employee have a family? true
+Subordinates:
+No subordinates.
+Employee constructor with only the salary, name, and position:
+Name: Sangeet Satpathy
+Salary: $90000
+Position: Software Developer
+Does this employee have a family? false
+Subordinates:
+No subordinates.
+Employee constructor with all the data:
+Name: Sangeet Satpathy
+Salary: $90000
+Position: Software Developer
+Does this employee have a family? true
+Subordinates:
+Subordinate A, Subordinate B, Subordinate C,
+
+Process finished with exit code 0
+*/
